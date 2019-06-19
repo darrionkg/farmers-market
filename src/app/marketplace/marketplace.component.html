@@ -1,7 +1,7 @@
 <h2>Marketplace</h2>
 
-<div *ngFor="let farmer of farmers" (click)="goToDetailPage(farmer)" class="panel panel-default">
+<div *ngFor="let farmer of farmers | async" (click)="goToDetailPage(farmer)" class="panel panel-default">
   <div class="panel-body">
-    <h3><a href="/marketplace/farmer/{{farmer.id}}"><em>{{farmer.farmerName}}</em> has {{farmer.produce}} for sale!</a></h3>
+    <h3><em>{{farmer.farmerName}}</em> has {{farmer.produce}} for sale!</h3>
   </div>
 </div>

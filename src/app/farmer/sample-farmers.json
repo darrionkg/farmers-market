@@ -1,0 +1,22 @@
+{ "farmers": [{
+    "farmerName": " Old McDonald",
+    "produce": "French Fries",
+    "description": "So good, you'll come back for more",
+    "id": "1"
+    }, {
+    "farmerName": "Old McGreggor",
+    "produce": "Little Bunny Foofoo",
+    "description": "Finally caught that damn rabbit in my cabbage patch",
+    "id": "2"
+      }, {
+    "farmerName": "Johnny Beanground",
+    "produce": "Coffee Espresso Shots",
+    "description": "Artisnally crafted in a press en français",
+    "id": "3"
+      }, {
+      "farmerName": "Arthur Hoggett",
+      "produce": "Pork",
+      "description": "Very tender suckling pig",
+      "id": "4"
+    }]
+}

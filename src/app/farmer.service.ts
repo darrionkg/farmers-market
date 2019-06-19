@@ -1,23 +1,25 @@
 import { Injectable } from '@angular/core';
 import { Farmer } from './farmer/farmer.model';
 import { FARMERS } from './farmer/mock-farmers';
+import { AngularFireDatabase, FirebaseListObservable } from 'angularfire2/database';
 
 @Injectable()
 export class FarmerService {
-  farmerId: number;
-  farmerToDisplay: Farmer;
+  farmers: FirebaseListObservable<any[]>;
 
-  constructor() { }
+  constructor(private database: AngularFireDatabase) {
+    this.farmers = database.list('farmers');
+   }
 
   getFarmers() {
-    return FARMERS;
+    return this.farmers;
   }
 
-  getFarmerById(farmerId: number){
-    for (var i = 0; i <= FARMERS.length - 1; i++) {
-      if (FARMERS[i].id === farmerId) {
-        return FARMERS[i];
-      }
-    }
+  addFarmer(newFarmer: Farmer) {
+    this.farmers.push(newFarmer);
+  }
+
+  getFarmerById(farmerId: string){
+    return this.database.object('farmers/' + farmerId);
   }
 }

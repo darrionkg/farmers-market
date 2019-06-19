@@ -12,6 +12,7 @@ import { FarmerComponent } from './farmer/farmer.component';
 import { masterFirebaseConfig } from './api-keys';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AdminComponent } from './admin/admin.component';
 
 
 export const firebaseConfig = {
@@ -27,12 +28,15 @@ export const firebaseConfig = {
     WelcomeComponent,
     AboutComponent,
     MarketplaceComponent,
-    FarmerComponent
+    FarmerComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    routing
+    routing,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

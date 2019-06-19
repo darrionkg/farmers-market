@@ -12,9 +12,8 @@ import { FarmerService } from '../farmer.service';
 })
 
 export class FarmerComponent implements OnInit {
-  
-  farmerId: number;
-  farmerToDisplay: Farmer;
+  farmerId: string;
+  farmerToDisplay;
 
   constructor(
     private route: ActivatedRoute,
@@ -24,7 +23,7 @@ export class FarmerComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.forEach((urlParameters) => {
-      this.farmerId = parseInt(urlParameters['id']);
+      this.farmerId = (urlParameters['id']);
     });  
     this.farmerToDisplay = this.farmerService.getFarmerById(this.farmerId);
   }
